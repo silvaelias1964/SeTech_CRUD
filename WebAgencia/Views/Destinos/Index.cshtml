@@ -8,27 +8,6 @@
 <h2>Destinos</h2>
 
 
-@if (ViewBag.Message != null)
-{
-    <script type="text/javascript">
-            window.onload = function () {
-                alert("@ViewBag.Message");
-            };
-    </script>
-}
-
-@if (ViewData.Count() > 0)
-{
-    <script type="text/javascript">
-            window.onload = function () {
-                @*alert("@ViewBag.Message");*@
-                alert("Mensaje");
-            };
-    </script>
-}
-
-
-
 <p>
 
     <a href="@Url.Action("Create","Destinos")" class="btn btn-primary btn-sm">Nuevo</a>

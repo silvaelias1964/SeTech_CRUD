@@ -1,0 +1,90 @@
+﻿@******* Vista de eliminacion de reserva *******@
+@model BDViajero.Modelo.Reservas
+
+@{
+    var viajero = ViewBag.NomViajero;
+    var destino = ViewBag.NomDestino;
+}
+
+<div class="form-horizontal">
+    <h4>Eliminar Reservación</h4>
+    <hr />
+    <h3>¿ Está Ud seguro de borrar la reservación ?</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Viajero
+                    <div class="col-md-13">
+                        @viajero
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Destino
+                    <div class="col-md-13">
+                        @destino
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Plazas reservadas
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.PlazasReserva)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Fecha de Reservación
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.FechaReserva)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Lugar de Origen
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.LugarOrigen)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-md-4">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Borrar" class="btn btn-danger btn-sm" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a href="@Url.Action("Index", "Reservas" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,61 @@
+﻿@******* Vista de eliminación de Destino *******@
+@model WebAgencia.Models.DestinoModel
+
+<div class="form-horizontal">
+    <h4>Eliminar Destino</h4>
+    <hr />
+    <h3>¿ Está seguro de borrar este registro ?</h3>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Destino)
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.Destino)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Precio)
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.Precio)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Plazas)
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.Plazas)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-md-4">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Borrar" class="btn btn-danger btn-sm" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a href="@Url.Action("Index", "Destinos" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ </div>

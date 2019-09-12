@@ -1,0 +1,49 @@
+﻿@* ****** Lista de Viajeros******** *@
+@model IEnumerable<BDViajero.Modelo.Viajeros>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Viajeros</h2>
+
+<p>        
+    <a href="@Url.Action("Create", "Viajeros")" class="btn btn-primary btn-sm">Nuevo</a>
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Cédula
+        </th>
+        <th>
+            Nombres
+        </th>
+        <th>
+            Apellidos
+        </th>
+
+        <th>Funciones</th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+       
+        <td>
+            <a href="@Url.Action("Edit", "Viajeros", new {id = item.IdViajero})" class="btn btn-primary btn-sm">Editar</a>
+            <a href="@Url.Action("Details", "Viajeros", new {id = item.IdViajero})" class="btn btn-primary btn-sm">Detalles</a>
+            <a href="@Url.Action("Delete", "Viajeros", new {id = item.IdViajero})" class="btn btn-danger btn-sm">Borrar</a>
+        </td>
+    </tr>
+}
+    
+</table>

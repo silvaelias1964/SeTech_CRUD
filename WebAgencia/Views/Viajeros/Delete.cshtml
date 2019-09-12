@@ -1,0 +1,92 @@
+﻿@******* Vista de eliminación de Viajeros *******@
+@model WebAgencia.Models.ViajeroModel
+
+<div class="form-horizontal">
+    <h4>Eliminar Viajero</h4>
+    <hr />
+    <h3>¿ Está seguro de borrar este registro ?</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Cedula)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Cedula)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Apellido)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Apellido)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Direccion)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Direccion)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Telefonos)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Telefonos)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.CorreoE)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.CorreoE)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-md-4">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Borrar" class="btn btn-danger btn-sm" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a href="@Url.Action("Index", "Viajeros" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

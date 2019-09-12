@@ -1,0 +1,83 @@
+﻿@******* Vista de detalle de reserva *******@
+@model BDViajero.Modelo.Reservas
+
+@{
+    var viajero = ViewBag.NomViajero;
+    var destino = ViewBag.NomDestino;
+}
+
+<div class="form-horizontal">
+    <h4>Ver Reservación</h4>
+    <hr />
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Viajero
+                    <div class="col-md-13">
+                        @viajero
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Destino
+                    <div class="col-md-13">
+                        @destino
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Plazas reservadas
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.PlazasReserva)                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Fecha de Reservación
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.FechaReserva)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    Lugar de Origen
+                    <div class="col-md-13">
+                        @Html.DisplayFor(model => model.LugarOrigen)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-md-4">
+                    <a href="@Url.Action("Edit", "Reservas", new {id = Model.IdReserva})" class="btn btn-primary btn-sm">Editar</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a href="@Url.Action("Index", "Reservas" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

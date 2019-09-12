@@ -1,0 +1,69 @@
+﻿@* ****** Lista de Destinos******** *@
+@model IEnumerable<BDViajero.Modelo.Destinos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Destinos</h2>
+
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
+
+@if (ViewData.Count() > 0)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                @*alert("@ViewBag.Message");*@
+                alert("Mensaje");
+            };
+    </script>
+}
+
+
+
+<p>
+
+    <a href="@Url.Action("Create","Destinos")" class="btn btn-primary btn-sm">Nuevo</a>
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Destino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plazas)
+        </th>
+        <th>Opciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plazas)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Destinos", new {id = item.IdDestino})" class="btn btn-primary btn-sm">Editar</a>
+                <a href="@Url.Action("Delete", "Destinos", new {id = item.IdDestino})" class="btn btn-danger btn-sm">Borrar</a>
+            </td>
+        </tr>
+    }
+</table>
+

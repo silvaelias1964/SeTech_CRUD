@@ -1,0 +1,85 @@
+﻿@******* Vista de detalles de Viajeros *******@
+@model WebAgencia.Models.ViajeroModel
+
+
+
+<div class="form-horizontal">
+    <h4>Detalles del Viajero</h4>
+    <hr />
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Cedula)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Cedula)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Apellido)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Apellido)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Direccion)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Direccion)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Telefonos)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.Telefonos)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.CorreoE)
+                    <div class="col-md-12 font-weight-bold">
+                        @Html.DisplayFor(model => model.CorreoE)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-md-4">
+                    <a href="@Url.Action("Edit", "Viajeros", new {id = Model.IdViajero})" class="btn btn-primary btn-sm">Editar</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <a href="@Url.Action("Index", "Viajeros" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

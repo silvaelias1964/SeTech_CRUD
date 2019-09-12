@@ -1,0 +1,120 @@
+﻿@******* Vista de edición de reserva *******@
+@model BDViajero.Modelo.Reservas
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Editar Reservación</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdReserva)
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Cédula
+                        <div class="col-md-13">
+                            @Html.DropDownList("IdViajero", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdViajero, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Destino
+                        <div class="col-md-13">
+                            @Html.DropDownList("IdDestino", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdDestino, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Plazas a reservar
+                        <div class="col-md-13">
+                            @Html.EditorFor(model => model.PlazasReserva, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PlazasReserva, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Fecha de Reservación
+                        <div class="col-md-13">
+                            @Html.EditorFor(model => model.FechaReserva, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FechaReserva, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Lugar de Origen
+                        <div class="col-md-13">
+                            @Html.EditorFor(model => model.LugarOrigen, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LugarOrigen, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="col-md-4">
+                        <input type="submit" value="Guardar" class="btn btn-primary btn-sm" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div>
+                        <a href="@Url.Action("Index", "Reservas" )" class="btn btn-primary btn-sm">Volver a la Lista</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var fecha = $("input[type=datetime]").val();
+
+            $('input[type=datetime]').datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0",
+                uiLibrary: 'bootstrap4',
+                locale: 'es-es',
+                sideBySide: true,
+                onSelect: function (value, ui) {
+
+                }
+            });
+        });
+    </script>
+}
+
